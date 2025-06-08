@@ -7,7 +7,7 @@
 body {
     font-family: 'Arial', sans-serif;
     background: #121212;  /* Dark background */
-    color: #e0e0e0;      /* Light text for better contrast */
+    color: #333;      /* Light text for better contrast */
     line-height: 1.6;
 }
 
@@ -103,7 +103,7 @@ main {
 .video-card {
     text-decoration: none;
     color: inherit;
-    background: #fff;
+    background: #1a3a8a;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
