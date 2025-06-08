@@ -1,6 +1,6 @@
-// Sample video data (you can replace with your actual video data)
-const videoData = [
-     {
+// Sample video data (can be loaded from videos.json)
+const videos = [
+   {
         "title": "Cute girl sexy view",
         "thumbnail": "https://files.catbox.moe/cu9hz8.png",
         "url": "https://files.catbox.moe/tu9q1g.mp4",
@@ -101,42 +101,26 @@ const videoData = [
 
 ];
 
-// DOM elements
-const mainVideo = document.getElementById('main-video');
-const videoTitle = document.getElementById('video-title');
-const videoCategory = document.getElementById('video-category');
-const videoDuration = document.getElementById('video-duration');
-const suggestionsContainer = document.getElementById('suggestions-container');
-const searchInput = document.getElementById('search');
-const searchBtn = document.getElementById('search-btn');
+const mainVideo = document.getElementById("main-video");
+const videoTitle = document.getElementById("video-title");
+const videoCategory = document.getElementById("video-category");
+const videoDuration = document.getElementById("video-duration");
+const videoList = document.getElementById("video-list");
+const searchInput = document.getElementById("search");
 
-// Initialize the page
-function init() {
-    loadSuggestions(videoData);
-    
-    // Play first video by default
-    if (videoData.length > 0) {
-        playVideo(videoData[0]);
-    }
-}
-
-// Load suggestions
-function loadSuggestions(videos) {
-    suggestionsContainer.innerHTML = '';
-    
-    videos.forEach(video => {
-        const videoCard = document.createElement('div');
-        videoCard.className = 'video-card';
+// Load videos into the suggestion list
+function loadVideos(videosToLoad) {
+    videoList.innerHTML = "";
+    videosToLoad.forEach(video => {
+        const videoCard = document.createElement("div");
+        videoCard.className = "video-card";
         videoCard.innerHTML = `
-            <img src="${video.thumbnail}" alt="${video.title}" class="video-thumbnail">
-            <div class="video-card-info">
-                <h4>${video.title}</h4>
-                <p>${video.category} • ${video.duration}</p>
-            </div>
+            <img src="${video.thumbnail}" alt="${video.title}">
+            <h4>${video.title}</h4>
+            <small>${video.duration}</small>
         `;
-        
-        videoCard.addEventListener('click', () => playVideo(video));
-        suggestionsContainer.appendChild(videoCard);
+        videoCard.addEventListener("click", () => playVideo(video));
+        videoList.appendChild(videoCard);
     });
 }
 
@@ -151,29 +135,14 @@ function playVideo(video) {
 }
 
 // Search functionality
-function searchVideos() {
-    const searchTerm = searchInput.value.toLowerCase();
-    if (searchTerm.trim() === '') {
-        loadSuggestions(videoData);
-        return;
-    }
-    
-    const filteredVideos = videoData.filter(video => 
-        video.title.toLowerCase().includes(searchTerm) || 
+searchInput.addEventListener("input", (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const filteredVideos = videos.filter(video => 
+        video.title.toLowerCase().includes(searchTerm) ||
         video.category.toLowerCase().includes(searchTerm)
     );
-    
-    loadSuggestions(filteredVideos);
-}
-
-// Event listeners
-searchBtn.addEventListener('click', searchVideos);
-searchInput.addEventListener('keyup', (e) => {
-    if (e.key === 'Enter') {
-        searchVideos();
-    }
+    loadVideos(filteredVideos);
 });
 
-// Initialize the page when loaded
-document.addEventListener('DOMContentLoaded', init);
-
+// Initialize
+loadVideos(videos);
