@@ -8,16 +8,24 @@
 </head>
 <body>
     <header>
-        <h1>Video Streaming</h1>
-        <input type="text" id="search" placeholder="Search videos...">
+        <div class="header-container">
+            <h1>Video Streaming</h1>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search videos...">
+            </div>
+        </div>
     </header>
 
     <main>
-        <div class="suggestions">
-            <h3>Suggested Videos</h3>
+        <section class="video-section">
+            <h2>Available Videos</h2>
             <div class="video-list" id="video-list"></div>
-        </div>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2025 Video Streaming. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
