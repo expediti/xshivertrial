@@ -1,134 +1,47 @@
-// Sample video data (can be loaded from videos.json)
-const videos = [
-    {
-        "title": "Cute girl sexy view",
-        "thumbnail": "https://files.catbox.moe/cu9hz8.png",
-        "url": "https://files.catbox.moe/tu9q1g.mp4",
-        "category": "indian",
-        "duration": "2:30"
-      },
-      {
-        "title": "huge sexy boobs japanese woman",
-        "thumbnail": "https://files.catbox.moe/d7a4fa.png",
-        "url": "https://files.catbox.moe/9iqrh3.mp4",
-        "category": "Japanese",
-        "duration": "1:00:30"
-      },
-      {
-        "title": "lucky boy",
-        "thumbnail": "https://files.catbox.moe/8f0o5k.png",
-        "url": "https://files.catbox.moe/qvknxs.mp4",
-        "category": "asian",
-        "duration": "2:30"
-      },
-      {
-        "title": "huge seexy tits japanese tied and fucked",
-        "thumbnail": "https://files.catbox.moe/uhrp6d.png",
-        "url": "https://files.catbox.moe/m47ya4.mp4",
-        "category": "japanese",
-        "duration": "29:30"
-      },
-      {
-        "title": "japanese womans are crazy hott",
-        "thumbnail": "https://files.catbox.moe/d7a4fa.png",
-        "url": "https://files.catbox.moe/hgk1hy.mp4",
-        "category": "japanese",
-        "duration": "25:30"
-      },
-      {
-        "title": "Cute girl sexy view",
-        "thumbnail": "https://files.catbox.moe/ydba07.png",
-        "url": "https://files.catbox.moe/fqnsje.mp4",
-        "category": "indian",
-        "duration": "2:30"
-      },
-      {
-        "title": "Beautifull girl fucked hard",
-        "thumbnail": "https://files.catbox.moe/oatqk5.png",
-        "url": "https://files.catbox.moe/tt3gwe.mp4",
-        "category": "indian",
-        "duration": "2:30"
-      },
-      {
-        "title": "Village girl round boobs",
-        "thumbnail": "https://files.catbox.moe/tii5vk.png",
-        "url": "https://files.catbox.moe/qkewb3.mp4",
-        "category": "indian",
-        "duration": "2:30"
-      },
-      {
-        "title": "nice pussy girl masturbating",
-        "thumbnail": "https://files.catbox.moe/k5fijm.png",
-        "url": "https://files.catbox.moe/ns5ld9.mp4",
-        "category": "indian",
-        "duration": "2:30"
-      },
-      {
-        "title": "Chubby girl big boobs",
-        "thumbnail": "https://files.catbox.moe/b4vluu.png",
-        "url": "https://files.catbox.moe/yg7ppt.mp4",
-        "category": "indian",
-        "duration": "2:30"
-      },
-      {
-        "title": "huge boobs bouncing",
-        "thumbnail": "https://files.catbox.moe/zu96vj.png",
-        "url": "https://files.catbox.moe/0f6nsp.mp4",
-        "category": "indian",
-        "duration": "2:30"
-      },
-      {
-        "title": "Indian Girl viral",
-        "thumbnail": "https://files.catbox.moe/jkpyvz.png",
-        "url": "https://files.catbox.moe/sjftxq.mp4",
-        "category": "indian",
-        "duration": "2:30"
-      },
-      {
-        "title": "Bhabhi In heat",
-        "thumbnail": "https://files.catbox.moe/qr6l56.png",
-        "url": "https://files.catbox.moe/4mamfo.mp4",
-        "category": "indian",
-        "duration": "3:15"
-      },
-      {
-        "title": "Cute girl big boobs",
-        "thumbnail": "https://files.catbox.moe/qq912z.png",
-        "url": "https://files.catbox.moe/nqquuv.mp4",
-        "category": "cute",
-        "duration": "1:45"
-      }
-
-];
-
 const videoList = document.getElementById("video-list");
 const searchInput = document.getElementById("search");
 
-// Load videos into the suggestion list
+// Function to fetch videos from videos.json
+async function fetchVideos() {
+  try {
+    const response = await fetch("videos.json");
+    if (!response.ok) throw new Error("Failed to load videos");
+    return await response.json();
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}
+
+// Load videos into the video list
 function loadVideos(videosToLoad) {
-    videoList.innerHTML = "";
-    videosToLoad.forEach(video => {
-        const videoLink = document.createElement("a");
-        videoLink.href = `video.html?url=${encodeURIComponent(video.url)}&title=${encodeURIComponent(video.title)}&category=${encodeURIComponent(video.category)}&duration=${encodeURIComponent(video.duration)}`;
-        videoLink.className = "video-card";
-        videoLink.innerHTML = `
-            <img src="${video.thumbnail}" alt="${video.title}">
-            <h4>${video.title}</h4>
-            <small>${video.duration}</small>
-        `;
-        videoList.appendChild(videoLink);
-    });
+  videoList.innerHTML = "";
+  videosToLoad.forEach(video => {
+    const videoLink = document.createElement("a");
+    videoLink.href = `video.html?url=${encodeURIComponent(video.url)}&title=${encodeURIComponent(video.title)}&category=${encodeURIComponent(video.category)}&duration=${encodeURIComponent(video.duration)}`;
+    videoLink.className = "video-card";
+    videoLink.innerHTML = `
+      <img src="${video.thumbnail}" alt="${video.title}">
+      <h4>${video.title}</h4>
+      <small>${video.duration}</small>
+    `;
+    videoList.appendChild(videoLink);
+  });
 }
 
 // Search functionality
-searchInput.addEventListener("input", (e) => {
-    const searchTerm = e.target.value.toLowerCase();
-    const filteredVideos = videos.filter(video => 
-        video.title.toLowerCase().includes(searchTerm) ||
-        video.category.toLowerCase().includes(searchTerm)
-    );
-    loadVideos(filteredVideos);
+searchInput.addEventListener("input", async (e) => {
+  const searchTerm = e.target.value.toLowerCase();
+  const videos = await fetchVideos();
+  const filteredVideos = videos.filter(video =>
+    video.title.toLowerCase().includes(searchTerm) ||
+    video.category.toLowerCase().includes(searchTerm)
+  );
+  loadVideos(filteredVideos);
 });
 
-// Initialize
-loadVideos(videos);
+// Initialize the page with all videos
+(async () => {
+  const videos = await fetchVideos();
+  loadVideos(videos);
+})();
