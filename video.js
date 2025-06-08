@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Filter videos from the same category, excluding the current video
         const suggestions = videos.filter(video =>
             video.category === category && video.url !== currentUrl
-        ).slice(0, 4); // Limit to 4 suggestions
+        );
 
         // Populate suggestion list
         suggestionList.innerHTML = "";
