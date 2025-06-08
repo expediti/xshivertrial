@@ -6,19 +6,18 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: #1a1a2e; /* Dark navy blue body background */
-    color: #e6e6e6; /* Light gray text for better contrast */
+    background: #f4f4f9;
+    color: #333;
     line-height: 1.6;
 }
 
 header {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Attractive blue gradient */
+    background: #1a1a1a;
     color: white;
     padding: 1rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
 }
 
 .header-container {
@@ -32,8 +31,6 @@ header {
 
 .header-container h1 {
     font-size: 1.8rem;
-    color: #fff; /* Bright white for the website name */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
 }
 
 .search-container {
@@ -48,7 +45,6 @@ header {
     border: none;
     border-radius: 5px;
     font-size: 1rem;
-    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
 }
 
 .back-link {
@@ -58,11 +54,10 @@ header {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     transition: background 0.3s;
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
 }
 
 .back-link:hover {
-    background: rgba(255, 255, 255, 0.3); /* Lighter on hover */
+    background: #333;
 }
 
 main {
@@ -78,7 +73,6 @@ main {
 .video-section h2, .suggestions h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #4cc9f0; /* Bright blue for section headings */
 }
 
 .video-player-section video {
@@ -93,11 +87,10 @@ main {
 .video-player-section h2 {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
-    color: #fff; /* White for video titles */
 }
 
 .video-player-section p {
-    color: #a8a8a8; /* Lighter gray for less important text */
+    color: #666;
     font-size: 0.9rem;
 }
 
@@ -110,16 +103,15 @@ main {
 .video-card {
     text-decoration: none;
     color: inherit;
-    background: #16213e; /* Dark blue card background */
+    background: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid #1e3c72; /* Blue border */
 }
 
 .video-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(46, 134, 222, 0.3); /* Blue shadow on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .video-card img {
@@ -132,25 +124,24 @@ main {
 .video-card h4 {
     font-size: 0.9rem;
     margin: 0.5rem;
-    color: #fff; /* White for video titles */
 }
 
 .video-card small {
     display: block;
     margin: 0 0.5rem 0.5rem;
-    color: #a8a8a8; /* Lighter gray for metadata */
+    color: #666;
     font-size: 0.8rem;
 }
 
 footer {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Matching header gradient */
+    background: #1a1a1a;
     color: white;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
 }
 
-/* Responsive Design - No changes needed here */
+/* Responsive Design */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
