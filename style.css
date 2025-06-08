@@ -6,13 +6,13 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: #f4f4f9;
-    color: #333;
+    background: #121212;  /* Dark background */
+    color: #e0e0e0;      /* Light text for better contrast */
     line-height: 1.6;
 }
 
 header {
-    background: #1a1a1a;
+    background: #1a3a8a;  /* Dark blue background */
     color: white;
     padding: 1rem;
     position: sticky;
