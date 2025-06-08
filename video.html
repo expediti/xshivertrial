@@ -8,23 +8,29 @@
 </head>
 <body>
     <header>
-        <h1>Video Player</h1>
-        <a href="index.html">Back to Home</a>
+        <div class="header-container">
+            <h1>Video Player</h1>
+            <a href="index.html" class="back-link">Back to Home</a>
+        </div>
     </header>
 
     <main>
-        <div class="video-player">
+        <section class="video-player-section">
             <video id="main-video" controls></video>
             <h2 id="video-title"></h2>
             <p id="video-category"></p>
             <p id="video-duration"></p>
-        </div>
+        </section>
 
-        <div class="suggestions">
-            <h3>Suggested Videos</h3>
+        <section class="suggestions">
+            <h2>Suggested Videos</h2>
             <div class="video-list" id="suggestion-list"></div>
-        </div>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2025 Video Streaming. All rights reserved.</p>
+    </footer>
 
     <script src="video.js"></script>
 </body>
