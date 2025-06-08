@@ -1,47 +1,104 @@
 // Sample video data (you can replace with your actual video data)
 const videoData = [
-    {
-        "title": "Nice pussy girl masturbating",
+     {
+        "title": "Cute girl sexy view",
+        "thumbnail": "https://files.catbox.moe/cu9hz8.png",
+        "url": "https://files.catbox.moe/tu9q1g.mp4",
+        "category": "indian",
+        "duration": "2:30"
+      },
+      {
+        "title": "huge sexy boobs japanese woman",
+        "thumbnail": "https://files.catbox.moe/d7a4fa.png",
+        "url": "https://files.catbox.moe/9iqrh3.mp4",
+        "category": "Japanese",
+        "duration": "1:00:30"
+      },
+      {
+        "title": "lucky boy",
+        "thumbnail": "https://files.catbox.moe/8f0o5k.png",
+        "url": "https://files.catbox.moe/qvknxs.mp4",
+        "category": "asian",
+        "duration": "2:30"
+      },
+      {
+        "title": "huge seexy tits japanese tied and fucked",
+        "thumbnail": "https://files.catbox.moe/uhrp6d.png",
+        "url": "https://files.catbox.moe/m47ya4.mp4",
+        "category": "japanese",
+        "duration": "29:30"
+      },
+      {
+        "title": "japanese womans are crazy hott",
+        "thumbnail": "https://files.catbox.moe/d7a4fa.png",
+        "url": "https://files.catbox.moe/hgk1hy.mp4",
+        "category": "japanese",
+        "duration": "25:30"
+      },
+      {
+        "title": "Cute girl sexy view",
+        "thumbnail": "https://files.catbox.moe/ydba07.png",
+        "url": "https://files.catbox.moe/fqnsje.mp4",
+        "category": "indian",
+        "duration": "2:30"
+      },
+      {
+        "title": "Beautifull girl fucked hard",
+        "thumbnail": "https://files.catbox.moe/oatqk5.png",
+        "url": "https://files.catbox.moe/tt3gwe.mp4",
+        "category": "indian",
+        "duration": "2:30"
+      },
+      {
+        "title": "Village girl round boobs",
+        "thumbnail": "https://files.catbox.moe/tii5vk.png",
+        "url": "https://files.catbox.moe/qkewb3.mp4",
+        "category": "indian",
+        "duration": "2:30"
+      },
+      {
+        "title": "nice pussy girl masturbating",
         "thumbnail": "https://files.catbox.moe/k5fijm.png",
         "url": "https://files.catbox.moe/ns5ld9.mp4",
         "category": "indian",
         "duration": "2:30"
-    },
-    {
-        "title": "Hot couple having fun",
-        "thumbnail": "https://example.com/thumbnail2.jpg",
-        "url": "https://example.com/video2.mp4",
-        "category": "couple",
-        "duration": "5:45"
-    },
-    {
-        "title": "Amateur solo performance",
-        "thumbnail": "https://example.com/thumbnail3.jpg",
-        "url": "https://example.com/video3.mp4",
-        "category": "amateur",
+      },
+      {
+        "title": "Chubby girl big boobs",
+        "thumbnail": "https://files.catbox.moe/b4vluu.png",
+        "url": "https://files.catbox.moe/yg7ppt.mp4",
+        "category": "indian",
+        "duration": "2:30"
+      },
+      {
+        "title": "huge boobs bouncing",
+        "thumbnail": "https://files.catbox.moe/zu96vj.png",
+        "url": "https://files.catbox.moe/0f6nsp.mp4",
+        "category": "indian",
+        "duration": "2:30"
+      },
+      {
+        "title": "Indian Girl viral",
+        "thumbnail": "https://files.catbox.moe/jkpyvz.png",
+        "url": "https://files.catbox.moe/sjftxq.mp4",
+        "category": "indian",
+        "duration": "2:30"
+      },
+      {
+        "title": "Bhabhi In heat",
+        "thumbnail": "https://files.catbox.moe/qr6l56.png",
+        "url": "https://files.catbox.moe/4mamfo.mp4",
+        "category": "indian",
         "duration": "3:15"
-    },
-    {
-        "title": "Professional adult film",
-        "thumbnail": "https://example.com/thumbnail4.jpg",
-        "url": "https://example.com/video4.mp4",
-        "category": "professional",
-        "duration": "12:20"
-    },
-    {
-        "title": "Outdoor adventure",
-        "thumbnail": "https://example.com/thumbnail5.jpg",
-        "url": "https://example.com/video5.mp4",
-        "category": "outdoor",
-        "duration": "7:30"
-    },
-    {
-        "title": "Romantic evening",
-        "thumbnail": "https://example.com/thumbnail6.jpg",
-        "url": "https://example.com/video6.mp4",
-        "category": "romantic",
-        "duration": "8:45"
-    }
+      },
+      {
+        "title": "Cute girl big boobs",
+        "thumbnail": "https://files.catbox.moe/qq912z.png",
+        "url": "https://files.catbox.moe/nqquuv.mp4",
+        "category": "cute",
+        "duration": "1:45"
+      }
+
 ];
 
 // DOM elements
