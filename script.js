@@ -1,6 +1,6 @@
 // Sample video data (can be loaded from videos.json)
 const videos = [
-   {
+    {
         "title": "Cute girl sexy view",
         "thumbnail": "https://files.catbox.moe/cu9hz8.png",
         "url": "https://files.catbox.moe/tu9q1g.mp4",
@@ -101,10 +101,6 @@ const videos = [
 
 ];
 
-const mainVideo = document.getElementById("main-video");
-const videoTitle = document.getElementById("video-title");
-const videoCategory = document.getElementById("video-category");
-const videoDuration = document.getElementById("video-duration");
 const videoList = document.getElementById("video-list");
 const searchInput = document.getElementById("search");
 
@@ -112,26 +108,16 @@ const searchInput = document.getElementById("search");
 function loadVideos(videosToLoad) {
     videoList.innerHTML = "";
     videosToLoad.forEach(video => {
-        const videoCard = document.createElement("div");
-        videoCard.className = "video-card";
-        videoCard.innerHTML = `
+        const videoLink = document.createElement("a");
+        videoLink.href = `video.html?url=${encodeURIComponent(video.url)}&title=${encodeURIComponent(video.title)}&category=${encodeURIComponent(video.category)}&duration=${encodeURIComponent(video.duration)}`;
+        videoLink.className = "video-card";
+        videoLink.innerHTML = `
             <img src="${video.thumbnail}" alt="${video.title}">
             <h4>${video.title}</h4>
             <small>${video.duration}</small>
         `;
-        videoCard.addEventListener("click", () => playVideo(video));
-        videoList.appendChild(videoCard);
+        videoList.appendChild(videoLink);
     });
-}
-
-// Play selected video
-function playVideo(video) {
-    mainVideo.src = video.url;
-    videoTitle.textContent = video.title;
-    videoCategory.textContent = `Category: ${video.category}`;
-    videoDuration.textContent = `Duration: ${video.duration}`;
-    mainVideo.load();
-    mainVideo.play();
 }
 
 // Search functionality
