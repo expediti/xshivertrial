@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Streaming Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>VideoStream</h1>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search videos...">
+            <button id="search-btn">Search</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="video-player">
+            <video id="main-video" controls autoplay>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-info">
+                <h2 id="video-title">Select a video to play</h2>
+                <p id="video-category"></p>
+                <p id="video-duration"></p>
+            </div>
+        </section>
+
+        <section class="suggestions">
+            <h3>Suggested Videos</h3>
+            <div class="video-grid" id="suggestions-container">
+                <!-- Videos will be loaded here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 VideoStream. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
